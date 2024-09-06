@@ -76,24 +76,25 @@ These technologies combine to automate a multi-layered security scan, providing 
 
 
 **Define the Functions:** 
-Implement three key functions that call specific security tools to perform different types of scans on the target system.
+> Implement three key functions that call specific security tools to perform different types of scans on the target system.
 
-Port Scanning: This function invokes nmap with a SYN scan (-sS) to check all TCP ports (-p-) on the target.
+> Port Scanning: This function invokes nmap with a SYN scan (-sS) to check all TCP ports (-p-) on the target.
 
-SSL/TLS Configuration Scanning: This function uses sslscan to check the SSL/TLS settings on the target. This is useful to identify weak encryption settings or insecure SSL/TLS protocols.
+> SSL/TLS Configuration Scanning: This function uses sslscan to check the SSL/TLS settings on the target. This is useful to identify weak encryption settings or insecure SSL/TLS protocols.
 
     def scan_ssl(target):
         print(f"Scanning SSL/TLS configurations on {target}...")
         subprocess.run(['sslscan', target])
 
-Outdated Software and Vulnerability Scanning: This function calls nmap with the -sV flag to detect the version of services running on the target, and it uses --script=vuln to run vulnerability checks for known issues in outdated software.
+> Outdated Software and Vulnerability Scanning: This function calls nmap with the -sV flag to detect the version of services running on the target, and it uses --script=vuln to run vulnerability checks for known issues in outdated software.
 
     def scan_outdated_software(target):
         print(f"Checking for outdated software on {target}...")
         subprocess.run(['nmap', '-sV', '--script=vuln', target])
 
 
-> **Run the Full Scan:**The run_scan function coordinates the three scanning activities. It calls the port scan, SSL scan, and software vulnerability scan functions sequentially, with printed output to indicate progress.
+**Run the Full Scan:**
+> The run_scan function coordinates the three scanning activities. It calls the port scan, SSL scan, and software vulnerability scan functions sequentially, with printed output to indicate progress.
 
     def run_scan(target):
         print(f"Starting vulnerability scan on {target}...\n")
@@ -109,26 +110,26 @@ Outdated Software and Vulnerability Scanning: This function calls nmap with the 
     
         print(f"Vulnerability scan on {target} completed.")
 
-> **Input and Execution:** 
+**Input and Execution:** 
 Finally, use a conditional block (if __name__ == "__main__":) to ensure the script runs only when it is executed directly (not imported as a module). The program asks the user to input the target (IP address or domain) and then runs the complete scan on that target.
 
     if __name__ == "__main__":
     target = input("Enter the target IP or domain: ")
     run_scan(target)
 
-> **Make the Script Executable (Optional):** 
-If you're on a Linux environment, make the script executable by running the following command in the terminal:
+**Make the Script Executable (Optional):** 
+> If you're on a Linux environment, make the script executable by running the following command in the terminal:
 
     chmod +x vulnerability_scan.py
 
-> **Run the Program:**
-Execute the script from the command line:
+**Run the Program:**
+> Execute the script from the command line:
 
     ./vulnerability_scan.py
 
-> **Output:**
+**Output:**
 
-As the program runs, it will: 
+> As the program runs, it will: 
    *Print information about the scanning process.
    *Call the external tools (nmap and sslscan).
    *Provide results for each scan (port scan, SSL scan, and vulnerability scan).
