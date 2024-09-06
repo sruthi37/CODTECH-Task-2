@@ -1,14 +1,14 @@
-**Name      :** Sruthi R
+**Name      : ** Sruthi R
 
-**Company   :** CODTECH IT SOLUTIONS
+**Company   : ** CODTECH IT SOLUTIONS
 
-**Domain    :** Cybersecurity and Ethical Hacking
+**Domain    : ** Cybersecurity and Ethical Hacking
 
-**ID no     :** CT08DS7399
+**ID no     : ** CT08DS7399
 
-**Duration  :** Aug - Sept 2024
+**Duration  : ** Aug - Sept 2024
 
-**Mentor    :** Neela Santhosh Kumar
+**Mentor    : ** Neela Santhosh Kumar
 
 
 
