@@ -1,14 +1,14 @@
-**Name     :** Sruthi R
+**Name      :** Sruthi R
 
-**Company  :** CODTECH IT SOLUTIONS
+**Company   :** CODTECH IT SOLUTIONS
 
-**Domain   :** Cybersecurity and Ethical Hacking
+**Domain    :** Cybersecurity and Ethical Hacking
 
-**ID no    :** CT08DS7399
+**ID no     :** CT08DS7399
 
-**Duration :** Aug - Sept 2024
+**Duration  :** Aug - Sept 2024
 
-**Mentor   :** Neela Santhosh Kumar
+**Mentor    :** Neela Santhosh Kumar
 
 
 ## OVERVIEW OF THE PROJECT
@@ -111,7 +111,7 @@ These technologies combine to automate a multi-layered security scan, providing 
         print(f"Vulnerability scan on {target} completed.")
 
 **Input and Execution:** 
-Finally, use a conditional block (if __name__ == "__main__":) to ensure the script runs only when it is executed directly (not imported as a module). The program asks the user to input the target (IP address or domain) and then runs the complete scan on that target.
+> Finally, use a conditional block (if __name__ == "__main__":) to ensure the script runs only when it is executed directly (not imported as a module). The program asks the user to input the target (IP address or domain) and then runs the complete scan on that target.
 
     if __name__ == "__main__":
     target = input("Enter the target IP or domain: ")
@@ -128,7 +128,6 @@ Finally, use a conditional block (if __name__ == "__main__":) to ensure the scri
     ./vulnerability_scan.py
 
 **Output:**
-
 > As the program runs, it will: 
    *Print information about the scanning process.
    *Call the external tools (nmap and sslscan).
@@ -140,54 +139,53 @@ Finally, use a conditional block (if __name__ == "__main__":) to ensure the scri
 
 This Python program automates the process of running security vulnerability scans on a target system (specified by an IP address or domain) using command-line tools like nmap and sslscan. Here’s a step-by-step breakdown of how it works:
 
-> **User Input:** 
-The program starts by prompting the user to input the target IP address or domain name
+**User Input:** 
+> The program starts by prompting the user to input the target IP address or domain name
 
     target = input("Enter the target IP or domain: ")
 
-> **Running the Vulnerability Scan:** 
-Once the user enters the target, the program calls the run_scan function, which initiates three different security checks on the target:
-
->Port Scanning
->SSL/TLS Configuration Scanning
->Outdated Software and Vulnerability Scanning
+**Running the Vulnerability Scan:** 
+> Once the user enters the target, the program calls the run_scan function, which initiates three different security checks on the target:
+   *Port Scanning
+   *SSL/TLS Configuration Scanning
+   *Outdated Software and Vulnerability Scanning
 
     run_scan(target)
     
 
-> **Port Scanning:** 
-The scan_ports function runs an nmap scan with the SYN scan option (-sS), which is a stealthy scan to detect open TCP ports. The -p- option ensures that all ports from 0 to 65535 are scanned.
+**Port Scanning:** 
+> The scan_ports function runs an nmap scan with the SYN scan option (-sS), which is a stealthy scan to detect open TCP ports. The -p- option ensures that all ports from 0 to 65535 are scanned.
 
     subprocess.run(['nmap', '-sS', '-p-', target])
 
 **Output:**
-The program displays the status of all open ports on the target, which could indicate potential attack entry points.
+> The program displays the status of all open ports on the target, which could indicate potential attack entry points.
 
 
-> **SSL/TLS Configuration Scanning:**
-The scan_ssl function uses the sslscan tool to examine the SSL/TLS configurations of the target. It checks for weak encryption algorithms, outdated protocols, or insecure settings.
+**SSL/TLS Configuration Scanning:**
+> The scan_ssl function uses the sslscan tool to examine the SSL/TLS configurations of the target. It checks for weak encryption algorithms, outdated protocols, or insecure settings.
 
     subprocess.run(['sslscan', target])
 
-**Output:** This step detects outdated or vulnerable software versions and displays known vulnerabilities associated with them.
+**Output:** 
+> This step detects outdated or vulnerable software versions and displays known vulnerabilities associated with them.
 
-> **Outdated Software and Vulnerability Scanning:**
-The scan_outdated_software function calls nmap with the service version detection flag (-sV) and the vulnerability scanning script (--script=vuln), which checks for known vulnerabilities in the software running on the target system.
+**Outdated Software and Vulnerability Scanning:**
+> The scan_outdated_software function calls nmap with the service version detection flag (-sV) and the vulnerability scanning script (--script=vuln), which checks for known vulnerabilities in the software running on the target system.
 
     subprocess.run(['nmap', '-sV', '--script=vuln', target])
 
 
-> **Sequential Execution:**
+**Sequential Execution:**
+>The program runs these three scans in sequence: 
+    *Port scan to identify open ports.
+    *SSL/TLS scan to check for encryption issues.
+    *Vulnerability scan to detect outdated software and known vulnerabilities.
 
-The program runs these three scans in sequence: 
- *Port scan to identify open ports.
- *SSL/TLS scan to check for encryption issues.
- *Vulnerability scan to detect outdated software and known vulnerabilities.
+> After each scan, the program prints the results and proceeds to the next step.
 
-After each scan, the program prints the results and proceeds to the next step.
-
-> **Completion Message:**
-Once all three scans are completed, the program prints a message indicating that the full vulnerability scan is done. This program is a simple, automated way to conduct basic security assessments on a given target, identifying misconfigurations, outdated software, and exposed ports.
+**Completion Message:**
+> Once all three scans are completed, the program prints a message indicating that the full vulnerability scan is done. This program is a simple, automated way to conduct basic security assessments on a given target, identifying misconfigurations, outdated software, and exposed ports.
 
     print(f"Vulnerability scan on {target} completed.")
 
