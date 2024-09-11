@@ -131,11 +131,11 @@ These technologies combine to automate a multi-layered security scan, providing 
     ./vulnerability_scan.py
 
 **Output:**
->As the program runs, it will:
-  *Print information about the scanning process.
-  *Call the external tools (nmap and sslscan).
-  *Provide results for each scan (port scan, SSL scan, and vulnerability scan).
-  *This is how the program is implemented. It automates the process of performing a basic vulnerability scan using widely adopted security tools like nmap and sslscan.
+> As the program runs, it will:
+   * Print information about the scanning process.
+   * Call the external tools (nmap and sslscan).
+   * Provide results for each scan (port scan, SSL scan, and vulnerability scan).
+   * This is how the program is implemented. It automates the process of performing a basic vulnerability scan using widely adopted security tools like nmap and sslscan.
 
 
 ### HOW IT WORKS?
