@@ -18,7 +18,7 @@
 ### PROJECT : VULNERABILITY SCANNING TOOL
 
 
-## OBJECTIVE
+### OBJECTIVE
 
 The objective of this program is to perform a comprehensive vulnerability scan on a target system (IP address or domain). It automates the following security checks:
 
@@ -31,7 +31,7 @@ The objective of this program is to perform a comprehensive vulnerability scan o
 The program is intended to be a simple and automated way for a security analyst or administrator to assess the security posture of a target by identifying exposed ports, misconfigured SSL/TLS settings, and vulnerable software.
 
 
-## Key Activities
+### KEY ACTIVITIES
 
 > **Port Scanning:** The program uses the nmap tool with the -sS (SYN scan) and -p- options to perform a full scan of all TCP ports on the target system. This identifies open or closed ports, which can indicate potential points of entry for an attacker.
 
@@ -43,7 +43,7 @@ The program is intended to be a simple and automated way for a security analyst 
 
 These activities enable the user to assess the security posture of the target system efficiently.
 
-## Technologies Used
+### TECHNOLOGIES USED
 
 > **Python:** The program is written in Python and uses Python's subprocess module to execute external commands, integrating powerful system tools for network and security scanning.
 
@@ -66,7 +66,7 @@ These activities enable the user to assess the security posture of the target sy
 These technologies combine to automate a multi-layered security scan, providing a comprehensive evaluation of the target system’s security.
 
 
-## Implementation
+### IMPLEMENTATION
 
 **Setup the Python Script:**
 > Start by creating a Python script file (e.g., vulnerability_scan.py) and use the shebang line to make the script executable in Linux environments.
@@ -138,7 +138,7 @@ These technologies combine to automate a multi-layered security scan, providing 
    *This is how the program is implemented. It automates the process of performing a basic vulnerability scan using widely adopted security tools like nmap and sslscan.
    
 
-## HOW IT WORKS?
+### HOW IT WORKS?
 
 This Python program automates the process of running security vulnerability scans on a target system (specified by an IP address or domain) using command-line tools like nmap and sslscan. Here’s a step-by-step breakdown of how it works:
 
@@ -193,7 +193,7 @@ This Python program automates the process of running security vulnerability scan
     print(f"Vulnerability scan on {target} completed.")
 
 
- ## OUTPUT
+ ### OUTPUT
 
  ![Screenshot 2024-09-06 195918](https://github.com/user-attachments/assets/d3b7c956-a60e-41da-9b4b-1f97a106d625)
 
@@ -208,7 +208,7 @@ This Python program automates the process of running security vulnerability scan
 The above output is implemented and printed in Kali Linux.
 
 
-## CONCLUSION
+### CONCLUSION
 
 This Python script serves as an automated tool to perform a comprehensive vulnerability scan on a target system (IP address or domain). By integrating widely-used security tools like nmap and sslscan, the program provides valuable insights into the security posture of the target, focusing on three key areas:
 
