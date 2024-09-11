@@ -96,8 +96,6 @@ These technologies combine to automate a multi-layered security scan, providing 
         print(f"Checking for outdated software on {target}...")
         subprocess.run(['nmap', '-sV', '--script=vuln', target])
 
-
-
 **Run the Full Scan:**
 > The run_scan function coordinates the three scanning activities. It calls the port scan, SSL scan, and software vulnerability scan functions sequentially, with printed output to indicate progress.
 
@@ -115,16 +113,12 @@ These technologies combine to automate a multi-layered security scan, providing 
     
         print(f"Vulnerability scan on {target} completed.")
 
-        
-
 **Input and Execution:** 
 > Finally, use a conditional block (if __name__ == "__main__":) to ensure the script runs only when it is executed directly (not imported as a module). The program asks the user to input the target (IP address or domain) and then runs the complete scan on that target.
 
     if __name__ == "__main__":
     target = input("Enter the target IP or domain: ")
     run_scan(target)
-
-
 
 **Make the Script Executable (Optional):** 
 > If you're on a Linux environment, make the script executable by running the following command in the terminal:
@@ -136,9 +130,8 @@ These technologies combine to automate a multi-layered security scan, providing 
 
     ./vulnerability_scan.py
 
-
 **Output:**
-> As the program runs, it will: 
+As the program runs, it will: 
     *Print information about the scanning process.
     *Call the external tools (nmap and sslscan).
     *Provide results for each scan (port scan, SSL scan, and vulnerability scan).
