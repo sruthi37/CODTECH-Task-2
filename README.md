@@ -131,11 +131,12 @@ These technologies combine to automate a multi-layered security scan, providing 
     ./vulnerability_scan.py
 
 **Output:**
-> As the program runs, it will:
-     * Print information about the scanning process.
-     * Call the external tools (nmap and sslscan).
-     * Provide results for each scan (port scan, SSL scan, and vulnerability scan).
-     * This is how the program is implemented. It automates the process of performing a basic vulnerability scan using widely adopted security tools like nmap and sslscan.
+
+As the program runs, it will:
+> Print information about the scanning process.
+> Call the external tools (nmap and sslscan).
+> Provide results for each scan (port scan, SSL scan, and vulnerability scan).
+> This is how the program is implemented. It automates the process of performing a basic vulnerability scan using widely adopted security tools like nmap and sslscan.
 
 
 ### HOW IT WORKS?
@@ -148,7 +149,6 @@ This Python program automates the process of running security vulnerability scan
     target = input("Enter the target IP or domain: ")
 
 
-
 **Running the Vulnerability Scan:** 
 > Once the user enters the target, the program calls the run_scan function, which initiates three different security checks on the target:
    *Port Scanning
@@ -156,15 +156,13 @@ This Python program automates the process of running security vulnerability scan
    *Outdated Software and Vulnerability Scanning
 
     run_scan(target)
-    
-    
 
+    
 **Port Scanning:** 
 > The scan_ports function runs an nmap scan with the SYN scan option (-sS), which is a stealthy scan to detect open TCP ports. The -p- option ensures that all ports from 0 to 65535 are scanned.
 
     subprocess.run(['nmap', '-sS', '-p-', target])
 
-    
 
 **Output:**
 > The program displays the status of all open ports on the target, which could indicate potential attack entry points.
@@ -175,17 +173,16 @@ This Python program automates the process of running security vulnerability scan
 
     subprocess.run(['sslscan', target])
 
-    
 
 **Output:** 
 > This step detects outdated or vulnerable software versions and displays known vulnerabilities associated with them.
+
 
 **Outdated Software and Vulnerability Scanning:**
 > The scan_outdated_software function calls nmap with the service version detection flag (-sV) and the vulnerability scanning script (--script=vuln), which checks for known vulnerabilities in the software running on the target system.
 
     subprocess.run(['nmap', '-sV', '--script=vuln', target])
     
-
 
 **Sequential Execution:**
 >The program runs these three scans in sequence: 
@@ -202,7 +199,7 @@ This Python program automates the process of running security vulnerability scan
 
 
 
- ### OUTPUT
+### OUTPUT
 
  ![Screenshot 2024-09-06 195918](https://github.com/user-attachments/assets/d3b7c956-a60e-41da-9b4b-1f97a106d625)
 
