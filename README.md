@@ -215,7 +215,7 @@ This Python program automates the process of running security vulnerability scan
 ![Screenshot 2024-09-14 105955](https://github.com/user-attachments/assets/a709b4e6-f740-4e91-81a1-317fc661631f)
 
 
-Thus checking the Outdated Software, Port Scanning and SSL/TLS configuration scanning of the domain or target is completed. The above vulnerability scannimg is implemented and scanned in Kali Linux.
+Thus checking the Outdated Software, Port Scanning and SSL/TLS configuration scanning of the domain or target is completed. The above vulnerability scanning is implemented and scanned in Kali Linux.
 
 
 ### CONCLUSION
